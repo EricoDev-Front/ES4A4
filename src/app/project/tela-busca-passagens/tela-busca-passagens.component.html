@@ -1,0 +1,73 @@
+  <header>
+  <h1>Busca de Passagens</h1>
+  </header>
+  <main>
+    <div class="formulario">
+      <form>
+        <div class="form-row" style="flex-direction: row; justify-content: center; align-items: center;">
+          <label for="origem">Origem:</label>
+          <select style="margin-right: 2%;" name="qtd-passageiros" id="qtd-passageiros" required>
+            <option value="" selected>Selecione</option>
+            <option value="1">Guarulhos</option>
+            <option value="2">Campinas</option>
+            <option value="3">Rio De Janeiro</option>
+            <option value="4">Salvador</option>
+            <option value="5">Belo Horizonte</option>
+            <option value="6">Manaus</option>
+          </select>
+          <label for="destino">Destino:</label>
+          <select name="qtd-passageiros" id="qtd-passageiros" required>
+            <option value="" selected>Selecione</option>
+            <option value="1">Guarulhos</option>
+            <option value="2">Campinas</option>
+            <option value="3">Rio De Janeiro</option>
+            <option value="4">Salvador</option>
+            <option value="5">Belo Horizonte</option>
+            <option value="6">Manaus</option>
+          </select>
+        </div>
+        <div class="form-row" style="flex-direction: row; justify-content: center; align-items: center;">
+          <label for="origem">Data de partida:</label>
+          <input type="date" name="data-partida" id="data-partida" required>
+          <label for="destino">Data de retorno:</label>
+          <input type="date" name="data-retorno" id="data-retorno">
+        </div>
+        <div class="form-row" style="align-items: center;margin-top: 5%;">
+          <label style="width: 140px;" for="qtd-passageiros">Quantidade de passageiros:</label>
+          <select name="qtd-passageiros" style="width: 160px;" id="qtd-passageiros" required>
+            <option value="" selected>Selecione</option>
+            <option value="1">1 passageiro</option>
+            <option value="2">2 passageiros</option>
+            <option value="3">3 passageiros</option>
+            <option value="4">4 passageiros</option>
+            <option value="5">5 passageiros</option>
+            <option value="6">6 passageiros</option>
+          </select>
+          <button style="margin-top: 5%; background-color: coral;" type="submit">Buscar passagens</button>
+        </div>
+      </form>
+    </div>
+  <div class="tabela">
+    <tbody style="display: flex; flex-direction: column; width: 50%;" >
+      <thead>Passagens:</thead>
+      <div class="tab" style="display: flex; justify-content: space-between; padding: 2%;" >
+        <tr style="display: flex; flex-direction: column;">
+          <th>Origem</th>
+          <td>Guarulhos</td>
+        </tr>
+        <tr style="display: flex; flex-direction: column;" >
+          <th>Destino</th>
+          <td>Manaus</td>
+        </tr>
+        <tr style="display: flex; flex-direction: column;" >
+          <th>Valor</th>
+          <td>2099.99</td>
+        </tr>
+        <tr style="display: flex; flex-direction: column;" >
+          <td><Button style="border-radius: 10px; padding: 5px; background-color: coral; height: 42px;">Comprar</Button></td>
+        </tr>
+      </div>
+    </tbody>
+  </div>
+  </main>
+
