@@ -1,0 +1,25 @@
+::ng-deep{
+  .navbar{
+    padding: 2% !important;
+    background-color: white !important;
+    border: solid black 2px !important;
+    border-radius: 0 0 10px 10px !important;
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+    form{
+      align-items: center;
+      justify-content: space-between;
+      label{
+        font-weight: 800;
+      }
+      .btn{
+        padding-top: 2.5%;
+        margin-left: -5%;
+      }
+    }
+  }
+}
