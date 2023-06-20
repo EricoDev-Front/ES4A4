@@ -305,7 +305,13 @@ export class TelaBuscaPassagensComponent implements OnInit {
   destinoSelecionada: any = undefined;
   qtdPessoas: any = undefined;
   errorMsg: boolean = false;
-  itemSelecionado!: Voos;
+  itemSelecionado: Voos = {
+    preco: '',
+    horario: '',
+    origem: '',
+    destino: '',
+    valorTotal: 0,
+  };
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
@@ -329,11 +335,17 @@ export class TelaBuscaPassagensComponent implements OnInit {
         item.destino === this.destinoSelecionada
       );
     });
+    this.voos.forEach((data, index) => {
+      data.valorTotal =
+        parseFloat(data.preco.replace(/[^\d,]/g, '').replace(',', '.')) *
+        this.qtdPessoas;
+    });
     console.log(this.voos);
     this.changeDetectorRef.detectChanges();
   }
 
   seleciona(item: Voos) {
     this.itemSelecionado = item;
+    this.changeDetectorRef.detectChanges();
   }
 }

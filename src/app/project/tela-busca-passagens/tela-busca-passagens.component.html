@@ -34,7 +34,7 @@
     <div *ngIf="errorMsg" class="col-sm-12"><p style="color: red; text-align: center;">Revise os valores selecionados!</p></div>
   </div>
 </nav>
-<div style="padding: 4% 2%; background-color: rgb(41, 40, 40);">
+<div [ngClass]="{boxConteudoMod1: voos.length > 0, boxConteudoMod2: voos.length == 0}">
   <table *ngIf="voos.length > 0; else img " class="table table-dark table-striped">
     <thead>
       <tr>
@@ -51,12 +51,12 @@
         <td>{{ item.horario }}</td>
         <td>{{ item.origem }}</td>
         <td>{{ item.destino }}</td>
-        <td><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="seleciona(item)">Dark</button></td>
+        <td><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="seleciona(item)">Selecionar</button></td>
       </tr>
     </tbody>
   </table>
 </div>
-<div *ngIf="itemSelecionado" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div  class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -64,14 +64,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" style="display: flex;flex-direction: column;">
-      <p> {{ 'Partindo de: '+itemSelecionado.origem+'às '+itemSelecionado.horario}}</p>
-      <p> {{ 'Destino: '+itemSelecionado.origem}}</p>
+      <p> {{ 'Partindo de: '+itemSelecionado.origem+' às '+itemSelecionado.horario}}</p>
+      <p> {{ 'Destino: '+itemSelecionado.destino}}</p>
       <p> {{ 'Passageiros: '+qtdPessoas}}</p>
-      <p> {{ 'Valor total: '+itemSelecionado.preco}}</p>
+      <p> {{ 'Valor total: '+ itemSelecionado.valorTotal}}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Prosseguir</button>
+        <button type="button" class="btn select btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Desabilitado para próxima sprint" >Prosseguir </button>
       </div>
     </div>
   </div>

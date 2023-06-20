@@ -3,4 +3,5 @@ export interface Voos {
   horario: string;
   origem: string;
   destino: string;
+  valorTotal?: number;
 }
